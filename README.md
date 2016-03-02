@@ -14,19 +14,9 @@ You'll also need to install a few things for this to install properly - be sure 
 
 # Testing
 
-To test this package without Notebook Genie, run the following script:
+To test this package without Notebook Genie, install all dependencies, then run `install.sh` then `node render.js` to render the page. The output PDF should be in the `dist/` folder and should contain a lot of `{{ }}`, or Mustache tags used to build the notebook in Notebook Genie.
 
-``` shell
-npm install
-bower install
-rm -rf dist
-gulp build
-node render.js
-```
-
-The output PDF should be in the `dist/` folder.
+After running the `install.sh` script once, you can run `gulp watch`, which would constantly rebuild the HTML template when you make a change. **Use this method when creating your own template design - this allows you to design the template without the need to rerun the entire Notebook Genie.**
 
 # Template API
 To learn how to build a template, see the NotebookGenie project's `templates/readme.md`.
-
-[t2l-logo]: https://raw.githubusercontent.com/smo-key/trello2latex/master/img/trello2latex-rgb-96.png

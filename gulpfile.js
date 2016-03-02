@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
-var mustache = require("gulp-mustache");
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var wrap = require('gulp-wrap');
@@ -25,12 +24,6 @@ gulp.task('sass', function () {
   .pipe(gulp.dest('dist/css'));
 });
 
-// Gulp Mustache Task
-gulp.task('mustache', function() {
-    gulp.src("src/*.html")
-        .pipe(mustache({},{},{}))
-        .pipe(gulp.dest("dist/"));
-});
 gulp.task('compress', function() {
   gulp.src('src/js/**/*.js')
     .pipe(uglify())
@@ -42,16 +35,17 @@ gulp.task('copy', function () {
   gulp.src('src/fonts/**/*').pipe(gulp.dest('dist/fonts'));
   gulp.src('lib/**/*').pipe(gulp.dest('dist/lib'));
   gulp.src('libc/**/*').pipe(gulp.dest('dist/libc'));
+  gulp.src('src/*.html').pipe(gulp.dest('dist/'));
 });
 
-gulp.task('build', ['sass','compress','copy','mustache'] )
-gulp.task('default', ['build','watch']);
+gulp.task('build', ['sass','compress','copy'] )
+gulp.task('default', ['build']);
 
-gulp.task('watch', function () {
+gulp.task('watch', ['build'], function () {
     gulp.watch('./src/sass/**/*.scss', ['sass']);
-    gulp.watch('./src/*.html', ['mustache']);
     gulp.watch('./src/js/**/*.js', ['compress']);
     gulp.watch('./src/img/**/*', ['copy']);
+    gulp.watch('./src/*.html', ['copy']);
     gulp.watch('./src/fonts/**/*', ['copy']);
     gulp.watch('./lib/**/*', ['copy']);
     gulp.watch('./libc/**/*', ['copy']);
