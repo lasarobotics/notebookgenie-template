@@ -11,7 +11,7 @@ You'll also need to run a few things for this to install properly:
 
 # Testing
 
-To test this package without Notebook Genie, install the following
+To test this package without Notebook Genie, install the following and have them in your `PATH`:
 
 - NodeJS, `npm` and `bower`
 - `pdftk` (from their website)
