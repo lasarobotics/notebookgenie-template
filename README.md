@@ -1,21 +1,31 @@
-![trello2latex][t2l-logo]
+Notebook Genie Template for LASA Robotics Notebook
 ============
 
-NodeJS web server that automagically converts a Trello board into a customizable LaTeX document
+This is the template used by LASA Robotics in the Notebook Genie project, which generates a complete engineering notebook from Trello data.
 
-[![NodeJS Dependencies][dep-image]][dep-url]
+# Installation
 
-#Installation
+To install, first have a running Notebook Genie instance, then add this template to your `templates.yml`.
 
-Some installation is required to get this running server-side. You need:
+You'll also need to run a few things for this to install properly:
 
-- NodeJS
-- TexLive or similar LaTeX renderer with a `pdflatex` command
-- Pandoc package for markdown conversion
-- `hprvbo` font set for LaTeX (typically in an extra fonts package)
+# Testing
 
-You will generally need to install a *complete* LaTeX installation.
+To test this package without Notebook Genie, install the following
 
-[dep-image]: https://david-dm.org/smo-key/trello2latex.svg?style=flat
-[dep-url]: https://david-dm.org/smo-key/trello2latex
+- NodeJS, `npm` and `bower`
+- `pdftk` (from their website)
+
+and then run the following script:
+
+``` shell
+npm install
+bower install
+rm -rf dist
+gulp build
+```
+
+# Template API
+To learn how to build a template, see the NotebookGenie project's `templates/readme.md`.
+
 [t2l-logo]: https://raw.githubusercontent.com/smo-key/trello2latex/master/img/trello2latex-rgb-96.png
