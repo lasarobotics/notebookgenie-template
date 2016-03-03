@@ -1,3 +1,5 @@
+$font-size-initials: 14pt;
+
 body
 {
   font-family: "std-500";
@@ -142,6 +144,18 @@ page.card .comment .avatar
   display: block;
   border-radius: 50%;
   padding-bottom: $comment-padding-bottom;
+}
+page.card .comment div.avatar
+{
+  background-color: $color-purple;
+  text-align: center;
+}
+page.card .comment div.avatar .initials
+{
+  color: white;
+  font-family: "std-700";
+  font-size: $font-size-initials;
+  margin-top: ($comment-img-size - $font-size-initials)/2 + 2pt;
 }
 page.card .comment .comment-right
 {
