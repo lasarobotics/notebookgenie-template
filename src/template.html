@@ -12,6 +12,14 @@
   <link href="lib/mdi/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css"/>
   <link href="css/book.css" media="all" rel="stylesheet" type="text/css">
 
+  <style>
+  @page:right {
+    @top-right {
+      content: "{{ b.title }}";
+    }
+  }
+  </style>
+
   <!-- JS -->
   <script src="libc/jquery/jquery-1.12.1.js"></script>
 </head>
@@ -114,6 +122,7 @@
     </div>
     {{/ iscomment}}
     {{# isattachment}}
+    {{# attachment.isimage}}
     <div class="comment attachment">
       {{# author.avatar}}
       <img class="avatar" src="{{{author.avatar}}}">
@@ -122,12 +131,11 @@
         <h2 class="name">{{author.name}}</h2>
         <div class="username">@{{author.username}}</div>
         <div class="timestamp">{{date}}</div>
-        <div class="body">Attached <a>{{{ attachment.name }}}{{{ attachment.ext }}}</a>.</div>
+        <div class="body">Attached <a>{{ attachment.name }}{{ attachment.ext }}</a>.</div>
       </div>
-      {{# attachment.isimage}}
       <img class="image" src="{{{ attachment.filename }}}">
-      {{/ attachment.isimage}}
     </div>
+    {{/ attachment.isimage}}
     {{/ isattachment}}
     {{/ comments }}
     </div>
