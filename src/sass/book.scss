@@ -206,10 +206,21 @@ page .title
 
 .list-meta
 {
-  display: none;
+  //display: none;
+  visibility: hidden;
   string-set: list-name content();
 }
-page.list .title h1,
+.list-meta.before
+{
+  string-set: card-name '';
+}
+
+page.list
+{
+  string-set: card-name '';
+  string-set: list-name '';
+}
+
 page.toc .title h1,
 page.frontmatter .title h1
 {
@@ -343,7 +354,7 @@ span.url {
     font-family: "std-700";
   }
   @top-right {
-    content: "4290 High PHidelity";
+    content: "Board Name";
     @include header-top();
     width: 40%;
   }
