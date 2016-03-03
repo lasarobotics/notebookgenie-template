@@ -33,7 +33,7 @@
     <h1 class="font-700 italic name4">NotebookGenie</h1>
     <div class="bottom">
       <h3 class="font-300 italic time-mod">Last modified on {{ b.lastmodified }}</h3>
-      <h3 class="font-300 italic time-built">Built on 12/12/12 12:22 PM</h3>
+      <h3 class="font-300 italic time-built">Built on {{ b.timebuilt }}</h3>
     </div>
   </page>
   <page class="empty clear"><h4>This page was intentionally left blank.</h4></page>
@@ -68,7 +68,7 @@
 
   <page class="card doublebreak list-{{list.id}}">
     <div class="title">
-      <h1 id="notebook-genie">{{name}}</h1>
+      <h1 id="card-{{ id }}">{{name}}</h1>
     </div>
     {{# attachmentcover}}
     <div class="card-cover" style="background-image: url('{{ attachmentcover.filename }}')"></div>
