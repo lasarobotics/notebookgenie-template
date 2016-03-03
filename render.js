@@ -23,7 +23,7 @@ function render()
 {
   console.log("[Prince] Generating PDF...")
   prince()
-    .inputs("dist/template.html")
+    .inputs("dist/test.html")
     .output("dist/index.pdf")
     .option("javascript")
     .option("log", "dist/prince.log")

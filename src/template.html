@@ -71,7 +71,7 @@
       <h1 id="card-{{ id }}">{{name}}</h1>
     </div>
     {{# attachmentcover}}
-    <div class="card-cover" style="background-image: url('{{ attachmentcover.filename }}')"></div>
+    <div class="card-cover" style="background-image: url('{{{ attachmentcover.filename }}}')"></div>
     {{/ attachmentcover}}
 
     {{# desc}}
@@ -102,7 +102,9 @@
     {{# comments }}
     {{# iscomment}}
     <div class="comment">
-      <img src={{author.avatar}}>
+      {{# author.avatar}}
+      <img class="avatar" src="{{{author.avatar}}}">
+      {{/ author.avatar}}
       <div class="comment-right">
         <h2 class="name">{{author.name}}</h2>
         <div class="username">@{{author.username}}</div>
@@ -112,7 +114,20 @@
     </div>
     {{/ iscomment}}
     {{# isattachment}}
-    <!-- we have an attachment: TODO!!!-->
+    <div class="comment attachment">
+      {{# author.avatar}}
+      <img class="avatar" src="{{{author.avatar}}}">
+      {{/ author.avatar}}
+      <div class="comment-right">
+        <h2 class="name">{{author.name}}</h2>
+        <div class="username">@{{author.username}}</div>
+        <div class="timestamp">{{date}}</div>
+        <div class="body">Attached <a>{{{ attachment.name }}}{{{ attachment.ext }}}</a>.</div>
+      </div>
+      {{# attachment.isimage}}
+      <img class="image" src="{{{ attachment.filename }}}">
+      {{/ attachment.isimage}}
+    </div>
     {{/ isattachment}}
     {{/ comments }}
     </div>

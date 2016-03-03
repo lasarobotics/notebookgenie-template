@@ -134,7 +134,7 @@ page.card .comment
 {
   clear: both;
 }
-page.card .comment img
+page.card .comment .avatar
 {
   height: $comment-img-size;
   width: $comment-img-size;
@@ -186,4 +186,10 @@ page.card .comment .body p
 {
   padding-top: 0;
   margin-top: 0;
+}
+page.card .attachment .image
+{
+  max-height: 20*$pica;
+  padding-top: 6pt;
+  padding-bottom: 6pt;
 }
