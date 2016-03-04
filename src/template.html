@@ -131,6 +131,9 @@
       {{# author.avatar}}
       <img class="avatar" src="{{{author.avatar}}}">
       {{/ author.avatar}}
+      {{^ author.avatar}}
+      <div class="avatar"><div class="initials">{{author.initials}}</div></div>
+      {{/ author.avatar}}
       <div class="comment-right">
         <h2 class="name">{{author.name}}</h2>
         <div class="username">@{{author.username}}</div>
