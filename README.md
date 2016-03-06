@@ -7,9 +7,10 @@ This is the template used by LASA Robotics in the Notebook Genie project, which 
 
 To install, first have a running Notebook Genie instance, then add this template to your `templates.yml`.
 
-You'll also need to install a few things for this to install properly - be sure to have them in your `PATH`:
+You'll also need to install a few things for this to install properly - **be sure to have them in your `PATH`**:
 - NodeJS, `npm` and `bower`
 - `pdftk` (from their website)
+- `prince` (from PrinceXML's website)
 
 
 # Testing
