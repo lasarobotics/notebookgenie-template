@@ -68,14 +68,15 @@
 $pica: 12pt;                                                        //picas per point
 $page-margin: 4*$pica 0*$pica;                                      //page margin
 $page-padding-x: 2*$pica;                                           //page padding (x)
-$page-padding-y: 2*$pica;                                           //page padding (y)
+$page-padding-y: $page-padding-x + 2*$pica;                         //page padding (y)
 $page-padding: $page-padding-y $page-padding-x;                     //page padding
 $page-bleed: auto;                                                  //page bleed
 $header-margin: 3pt $page-padding-x 0*$pica $page-padding-x;        //header margin
-$footer-margin-bottom: 1.5*$pica;                                   //page number extra space
+$footer-margin: 3pt $page-padding-x 1.5*$pica $page-padding-x;      //footer margin
 $footer-width: 2.5*$pica;                                           //page number width
+$footer-height: 2*$pica;                                           //page number width
 $title-margin-top: -$page-padding-y - (2*$pica);                    //title margin (top)
-$title-margin: $title-margin-top -2*$pica 2*$pica -2*$pica;         //title margin
+$title-margin: $title-margin-top -2*$pica 1*$pica -2*$pica;         //title margin
 $title-padding: 3*$pica $page-padding-x 1*$pica $page-padding-x;    //title padding
 $title-font-size: 28pt;                                             //title font size
 $title-height: 2.5*$pica;                                           //title height
@@ -84,10 +85,11 @@ $cover-margin-bottom: 0*$pica;                                      //bottom mar
 $cover-logo-width: 32*$pica;                                        //cover logo image width
 $card-cover-margin: -$page-padding-y 0*$pica 2*$pica -2*$pica;      //card cover image margin
 $card-cover-padding: 0 4*$pica 0*$pica 0*$pica;                     //card cover image margin
+$comment-page-break: avoid;                                          //auto or avoid
 $color-purple: #9b26b6;                                             //base purple color
 $color-gray-dark: material-color("grey", "700");                    //dark gray color
 $color-gray-light: material-color("grey", "300");                   //light gray color
-$color-gray-xlight: material-color("grey", "100");                   //extra light gray color
+$color-gray-xlight: material-color("grey", "100");                  //extra light gray color
 $color-gray-text: material-color("grey", "700");                    //gray text color
 
 /** HELPER FUNCTIONS **/
@@ -308,17 +310,16 @@ span.url {
 
 /** HEADERS / FOOTERS **/
 @mixin footer-page-number() {
-  margin: $header-margin;
+  margin: $footer-margin;
   content: counter(page);
   background-color: $color-purple;
   width: $footer-width;
-  height: 2*$pica;
+  height: $footer-height;
   text-align: center;
-  margin-bottom: $footer-margin-bottom;
   font-family: "std-700";
   color: white;
   font-size: 12pt;
-  padding-top: 4px;
+  padding-top: 4pt;
 }
 @mixin header-top()
 {

@@ -34,6 +34,7 @@ gulp.task('copy', function () {
   gulp.src('src/img/**/*').pipe(gulp.dest('dist/img'));
   gulp.src('src/fonts/**/*').pipe(gulp.dest('dist/fonts'));
   gulp.src('lib/**/*').pipe(gulp.dest('dist/lib'));
+  gulp.src('src/dl/**/*').pipe(gulp.dest('dist/dl'));
   gulp.src('libc/**/*').pipe(gulp.dest('dist/libc'));
   gulp.src('src/*.html').pipe(gulp.dest('dist/'));
 });
@@ -45,6 +46,7 @@ gulp.task('watch', ['build'], function () {
     gulp.watch('./src/sass/**/*.scss', ['sass']);
     gulp.watch('./src/js/**/*.js', ['compress']);
     gulp.watch('./src/img/**/*', ['copy']);
+    gulp.watch('./src/dl/**/*', ['copy']);
     gulp.watch('./src/*.html', ['copy']);
     gulp.watch('./src/fonts/**/*', ['copy']);
     gulp.watch('./lib/**/*', ['copy']);

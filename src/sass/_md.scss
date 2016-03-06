@@ -135,6 +135,9 @@ $comment-padding-bottom: 3pt;
 page.card .comment
 {
   clear: both;
+  page-break-inside: $comment-page-break;
+  margin-top: 0;
+  padding-top: 0;
 }
 page.card .comment .avatar
 {
