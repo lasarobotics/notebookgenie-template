@@ -19,7 +19,7 @@ function install_npm()
 function install_bower()
 {
   console.log("[Bower] Installing...");
-  exec('bower install', function(error, stdout, stderr)
+  exec('bower install --allow-root', function(error, stdout, stderr)
   {
     if (error) throw error;
     console.log(stdout);
