@@ -123,6 +123,14 @@ page.card .checklist div i
   font-size: 120%;
   padding-right: 4pt;
 }
+page.card .checklist p
+{
+  display: inline-block;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
 hr
 {
   border: 1pt solid $color-gray-light;

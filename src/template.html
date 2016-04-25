@@ -87,18 +87,20 @@
     <div class="card-desc">
     {{{ desc }}} <!-- Parsed markdown -->
     </div>
+    {{^ frontmatter}}
     <hr>
+    {{/ frontmatter}}
     {{/ desc}}
 
     {{# checklists }}
     <div class="card-checklist checklist">
-      <h2>Checklist</h2>
+      <h2>{{name}}</h2>
       {{# items}}
       {{# checked}}
-      <div class="checked"><i class='mdi mdi-checkbox-marked-outline'></i>{{ name }}</div>
+      <div class="checked"><i class='mdi mdi-checkbox-marked-outline'></i>{{{ name }}}</div>
       {{/ checked}}
       {{^ checked}}
-      <div class="unchecked"><i class='mdi mdi-checkbox-blank-outline'></i>{{ name }}</div>
+      <div class="unchecked"><i class='mdi mdi-checkbox-blank-outline'></i>{{{ name }}}</div>
       {{/ checked}}
       {{/ items}}
     </div>
